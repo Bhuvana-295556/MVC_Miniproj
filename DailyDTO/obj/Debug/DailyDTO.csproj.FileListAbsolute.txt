@@ -1,0 +1,6 @@
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyDTO\bin\Debug\DailyDTO.dll
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyDTO\bin\Debug\DailyDTO.pdb
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyDTO\obj\Debug\DailyDTO.csproj.AssemblyReference.cache
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyDTO\obj\Debug\DailyDTO.csproj.CoreCompileInputs.cache
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyDTO\obj\Debug\DailyDTO.dll
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyDTO\obj\Debug\DailyDTO.pdb

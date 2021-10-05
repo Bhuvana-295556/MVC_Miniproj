@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="expense">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ExpenseDate" Type="DateTime" Precision="0" />
+    <Property Name="ExpenseItem" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ExpenseCost" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="expense1" Relationship="Self.FK_expense_expense" FromRole="expense" ToRole="expense1" />
+    <NavigationProperty Name="expense2" Relationship="Self.FK_expense_expense" FromRole="expense1" ToRole="expense" />
+    <NavigationProperty Name="user" Relationship="Self.FK_expense_user" FromRole="expense" ToRole="user" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNumber" Type="Int64" />
+    <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="expenses" Relationship="Self.FK_expense_user" FromRole="user" ToRole="expense" />
+  </EntityType>
+  <Association Name="FK_expense_expense">
+    <End Role="expense" Type="Self.expense" Multiplicity="1" />
+    <End Role="expense1" Type="Self.expense" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="expense">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="expense1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_expense_user">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="expense" Type="Self.expense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="expense">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="expenses" EntityType="Self.expense" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <AssociationSet Name="FK_expense_expense" Association="Self.FK_expense_expense">
+      <End Role="expense" EntitySet="expenses" />
+      <End Role="expense1" EntitySet="expenses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_expense_user" Association="Self.FK_expense_user">
+      <End Role="user" EntitySet="users" />
+      <End Role="expense" EntitySet="expenses" />
+    </AssociationSet>
+    <FunctionImport Name="INSERTDATA">
+      <Parameter Name="USERId" Mode="In" Type="Int32" />
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="EMAIL" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Insert_Data" ReturnType="Collection(Model.usp_Insert_Data_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdateUser">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="usp_Insert_Data_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="MobileNumber" Nullable="true" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="200" />
+  </ComplexType>
+</Schema>

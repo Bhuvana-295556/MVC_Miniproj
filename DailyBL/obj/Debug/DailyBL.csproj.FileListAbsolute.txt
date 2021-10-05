@@ -1,0 +1,14 @@
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\bin\Debug\DailyBL.dll
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\bin\Debug\DailyBL.pdb
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\bin\Debug\DailyDAL.dll
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\bin\Debug\DailyDTO.dll
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\bin\Debug\EntityFramework.dll
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\bin\Debug\DailyDAL.pdb
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\bin\Debug\DailyDAL.dll.config
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\bin\Debug\DailyDTO.pdb
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\bin\Debug\EntityFramework.xml
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\obj\Debug\DailyBL.csproj.AssemblyReference.cache
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\obj\Debug\DailyBL.csproj.CoreCompileInputs.cache
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\obj\Debug\DailyBL.csproj.CopyComplete
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\obj\Debug\DailyBL.dll
+C:\Users\lavan\source\repos\MINI_MVC\MINIProjectwithMVC\DailyBL\obj\Debug\DailyBL.pdb
